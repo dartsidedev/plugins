@@ -1,6 +1,6 @@
 name: settings_panel_android
 description: Launch Android's Settings.Panel right from your Flutter app. Android-only plugin.
-version: 0.1.0
+version: 0.1.1
 author: Vince Varga <vince.varga@serial.dev>
 homepage: https://github.com/dartsidedev/plugins/tree/master/packages/settings_panel_android
 repository: https://github.com/dartsidedev/plugins

@@ -11,6 +11,7 @@ library settings_panel_android;
 
 import 'dart:async';
 
+import 'package:meta/meta.dart';
 import 'package:flutter/services.dart';
 
 /// Kinds of supported settings panels.
@@ -19,10 +20,13 @@ enum SettingsPanelAction {
   ///
   /// Settings related to internet connectivity, such as Airplane mode, Wi-Fi, and Mobile Data
   internetConnectivity,
+
   /// Settings dialog containing NFC-related settings.
   nfc,
+
   /// Settings dialog containing all volume streams.
   volume,
+
   /// Show a settings dialog containing controls for Wifi.
   ///
   /// This is useful for apps that need a Wi-Fi connection to perform large uploads or downloads.
@@ -53,11 +57,12 @@ class SettingsPanel {
   /// }
   /// ```
   static Future<bool> display(SettingsPanelAction action) async {
-    return _channel.invokeMethod('display', _actionToString(action));
+    return _channel.invokeMethod('display', actionToString(action));
   }
 }
 
-String _actionToString(SettingsPanelAction action) {
+@visibleForTesting
+String actionToString(SettingsPanelAction action) {
   switch (action) {
     case SettingsPanelAction.internetConnectivity:
       return 'android.settings.panel.action.INTERNET_CONNECTIVITY';
