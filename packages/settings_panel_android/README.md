@@ -4,7 +4,7 @@ This Flutter plugin helps you show settings panels directly from your Dart code.
 
 This plugin **only works on Android devices with API level 29 or more**, as `Settings.Panel` is an Android 10 feature. On iOS devices and Android devices with older API levels, the plugin simply does not do anything.
 
-![`dartsidedev/settings_panel_android` example app screenshot displaying internet connectivity settings panel](https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_screenshot_internetConnectivity.png?raw=true)
+<img src="https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_example_app.gif?raw=true" alt="GIF Flutter plugin settings_panel_android - Example app in action" height="600"/>
 
 ## Introduction
 
@@ -39,6 +39,8 @@ FlatButton(
 ```
 
 ## Example app
+
+<img src="https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_screenshot_internetConnectivity.png?raw=true" alt="dartsidedev/settings_panel_android example app screenshot displaying internet connectivity settings panel" height="600"/>
 
 You can see a very simple example app with its source code and screen recordings in the [`example`](https://github.com/dartsidedev/plugins/tree/master/packages/settings_panel_android/example) folder of this plugin.
 

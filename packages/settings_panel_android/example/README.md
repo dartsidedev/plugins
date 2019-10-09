@@ -10,7 +10,7 @@ Demonstrates how to use the settings_panel_android plugin.
 
 ## Screenshots and screen recordings
 
-![GIF Flutter plugin settings_panel_android - Example app in action](https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_example_app.gif?raw=true)
+<img src="https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_example_app.gif?raw=true" alt="GIF Flutter plugin settings_panel_android - Example app in action" height="600"/>
 
 The panels might look different on different devices.
 
@@ -20,7 +20,7 @@ The panels might look different on different devices.
 SettingsPanel.display(SettingsPanelAction.internetConnectivity);
 ```
 
-![Flutter plugin settings_panel_android - Example app Internet connectivity panel](https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_screenshot_internetConnectivity.png?raw=true)
+<img src="https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_screenshot_internetConnectivity.png?raw=true" alt="Flutter plugin settings_panel_android - Example app Internet connectivity panel" height="600"/>
 
 ### NFC panel
 
@@ -28,7 +28,8 @@ SettingsPanel.display(SettingsPanelAction.internetConnectivity);
 SettingsPanel.display(SettingsPanelAction.nfc);
 ```
 
-![Flutter plugin settings_panel_android - Example app NFC panel](https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_screenshot_nfc.png?raw=true)
+<img src="https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_screenshot_nfc.png?raw=true" alt="Flutter plugin settings_panel_android - Example app NFC panel" height="600"/>
+
 
 ### Volume panel
 
@@ -36,7 +37,7 @@ SettingsPanel.display(SettingsPanelAction.nfc);
 SettingsPanel.display(SettingsPanelAction.volume);
 ```
 
-![Flutter plugin settings_panel_android - Example app Volume panel](https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_screenshot_volume.png?raw=true)
+<img src="https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_screenshot_volume.png?raw=true" alt="Flutter plugin settings_panel_android - Example app Volume panel" height="600"/>
 
 ### WiFi panel
 
@@ -44,5 +45,4 @@ SettingsPanel.display(SettingsPanelAction.volume);
 SettingsPanel.display(SettingsPanelAction.wifi);
 ```
 
-![Flutter plugin settings_panel_android - Example app Wi-Fi panel](https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_screenshot_wifi.png?raw=true)
-
+<img src="https://github.com/dartsidedev/plugins/blob/master/assets/settings_panel_android/settings_panel_android_screenshot_wifi.png?raw=true" alt="Flutter plugin settings_panel_android - Example app Wi-Fi panel" height="600"/>
