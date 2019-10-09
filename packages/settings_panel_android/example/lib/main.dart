@@ -1,55 +1,56 @@
-import 'package:flutter/material.dart';
-import 'dart:async';
+import 'dart:io' show Platform;
 
-import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
 import 'package:settings_panel_android/settings_panel_android.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(SettingsPanelExampleApp());
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await SettingsPanelAndroid.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
-  }
+class SettingsPanelExampleApp extends StatelessWidget {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        key: _scaffoldKey,
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Settings Panel example app'),
         ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+        body: ListView(
+          children: SettingsPanelAction.values.map<Widget>((v) {
+            return FlatButton(
+              onPressed: () async {
+                if (!Platform.isAndroid) {
+                  showAndroidOnlyWarning();
+                  return;
+                }
+                final successful = await SettingsPanel.display(v);
+                if (!successful) {
+                  showUnsuccessfulWarning();
+                }
+              },
+              child: Text('$v'),
+            );
+          }).toList(),
         ),
+      ),
+    );
+  }
+
+  showUnsuccessfulWarning() {
+    _scaffoldKey.currentState.showSnackBar(
+      SnackBar(
+        content: Text(
+            'Could not display settings panel. Functionality requires API level 29 (Android 10) or more.'),
+      ),
+    );
+  }
+
+  showAndroidOnlyWarning() {
+    _scaffoldKey.currentState.showSnackBar(
+      SnackBar(
+        content: Text('This plugin only works on Android'),
       ),
     );
   }

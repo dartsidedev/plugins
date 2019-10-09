@@ -1,4 +1,4 @@
-package dev.dartside.plugins.settings_panel_android.settings_panel_android_example
+package dev.dartside.plugins.settings_panel_android_example
 
 import android.os.Bundle
 

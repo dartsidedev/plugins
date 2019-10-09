@@ -7,21 +7,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
+import 'package:settings_panel_android/settings_panel_android.dart';
 import 'package:settings_panel_android_example/main.dart';
 
 void main() {
-  testWidgets('Verify Platform version', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
-
-    // Verify that platform version is retrieved.
+  testWidgets('Renders buttons for each panel', (WidgetTester tester) async {
+    await tester.pumpWidget(SettingsPanelExampleApp());
     expect(
-      find.byWidgetPredicate(
-        (Widget widget) => widget is Text &&
-                           widget.data.startsWith('Running on:'),
-      ),
-      findsOneWidget,
+      find.byWidgetPredicate((Widget widget) => widget is FlatButton),
+      findsNWidgets(SettingsPanelAction.values.length),
     );
   });
 }
