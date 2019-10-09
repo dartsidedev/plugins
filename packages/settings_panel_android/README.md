@@ -58,7 +58,7 @@ You can see a very simple example app with its source code and screen recordings
 
 ##### What happens on iOS devices?
 
-The way the plugin is implemented, the iOS platform specific call just returns `false`. It will crash your app, but I recommend you check the platform the app is being executed on and call this plugin's method only if you are on Android
+The way the plugin is implemented, the iOS platform specific call just returns `false`. It will not crash your app, but I recommend you check the platform the app is being executed on and call this plugin's method only if you are on Android
 
 
 ```dart
